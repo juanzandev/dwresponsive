@@ -1,0 +1,266 @@
+body::before {
+    content: '';
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #073735 , #0D252F 50%);
+    z-index: -1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    background-color: #005f73; 
+    padding: 12px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+	border-radius: 15px; /* Apply rounded corners */
+    margin: 10px; /* Add margin for consistent spacing around the nav */
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 20px; 
+}
+
+.navbar a {
+    color: #edf2f4; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+	transition: color 0.3s ease, transform 0.3s ease; 
+	font-size: 24px;
+	font-family: source code pro extrabold;
+	font-style: normal;
+	text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+	background-color: cadetblue;
+}
+
+header, footer {
+    background: #0F3438;
+    color: #fff;
+    text-align: center;
+	border-radius: 15px; /* Apply rounded corners */
+    margin: 5px; /* Add margin to prevent the header/footer from touching the edge of the viewport */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+    padding: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: relative; 
+    z-index: 2; 
+}
+footer p {
+    font-size: 0.9em;
+    margin: 0;
+    padding: 10px;
+}
+
+#slideshow {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#slideshow img {
+    max-width: 100%;
+    max-height: 80vh;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    opacity: 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 35, 0.9); 
+}
+
+#slideshow-controls {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 120px; 
+}
+
+#slideshow-controls button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #78ffd6;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#slideshow-controls button:hover {
+    background-color: transparent;
+    color: #007991;
+    border-color: #78ffd6;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover; 
+    }
+
+    nav {
+        position: relative;
+		padding: 28px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px; 
+        display: none; 
+		z-index: 1;
+    }
+
+    .navbar li {
+        margin: 10px 0; 
+    }
+
+    .navbar a {
+        font-size: 18px; 
+    }
+
+    .menu-icon {
+    	position: absolute;
+    	top: 10px; 
+    	right: 10px; 
+    	z-index: 3; 
+    	display: flex; 
+    	flex-direction: column; 
+    	justify-content: space-around; 
+    	height: 30px; 
+    	width: 35px; 
+	}	
+
+	.menu-icon .bar {
+    	background-color: #edf2f4;
+    	height: 3px; 
+    	width: 100%; 
+	}
+	.menu-icon .bar:active {
+    	background-color: #ccc;
+	}
+	.menu-icon:active {
+    	opacity: 0.7; 
+	}
+    header h1, footer p {
+        font-size: 1.2em;
+    }
+
+    #slideshow img {
+        max-width: 95%;
+        border-radius: 5px;
+    }
+
+    #slideshow-controls button {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none; 
+    }
+}
+.about-section {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #2a2c2e; 
+    border-radius: 15px; 
+    color: #e0e0e0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+.contact-info li span {
+    display: inline-flex;
+    background-color: #333436; 
+    padding: 10px; 
+    border-radius: 10px; 
+    border: 1px solid #5e5e62; 
+    align-items: center; 
+}
+.contact-info {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+    padding: 0; 
+    list-style-type: none; 
+    margin: 15px 0; 
+}
+
+.contact-info li {
+	list-style-type: none;
+    margin: 15px 0;
+}
+.contact-info a, .contact-info a:hover {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.navbar a:hover, .navbar a:focus {
+    color: #2b2d42; 
+    background-color: #ade8f4;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navbar a.clicked {
+    transform: scale(0.95); 
+    background-color: #0077b6; 
+    color: #ffffff; 
+    box-shadow: none; 
+    transition: transform 0.1s ease, background-color 0.1s ease; 
+}
+#slideshow img {
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: scale(0.95); 
+}
+
+#slideshow img.active {
+    opacity: 1;
+    transform: scale(1); 
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8); 
+        opacity: 0.5; 
+    }
+    to {
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+h1 {
+    animation: zoomIn 0.7s ease-out forwards;
+}
